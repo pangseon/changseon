@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박창선 | Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #1c2128;
+            --bg-hover: #21262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent: #58a6ff;
+            --accent-hover: #79c0ff;
+            --accent-dim: rgba(88, 166, 255, 0.1);
+            --green: #3fb950;
+            --green-dim: rgba(63, 185, 80, 0.15);
+            --purple: #bc8cff;
+            --purple-dim: rgba(188, 140, 255, 0.15);
+            --orange: #f0883e;
+            --orange-dim: rgba(240, 136, 62, 0.15);
+            --red: #f85149;
+            --yellow: #d29922;
+            --gradient-accent: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) var(--bg-primary);
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* === LAYOUT === */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* === HEADER === */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .header-logo span {
+            color: var(--accent);
+        }
+
+        .nav { display: flex; gap: 8px; }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover, .nav a.active {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 120px 0 60px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: var(--green-dim);
+            color: var(--green);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 .gradient {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .hero-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .hero-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* === SECTION === */
+        section {
+            padding: 48px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* === SUMMARY === */
+        .summary-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .summary-item {
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* === VALUES === */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .value-card {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: border-color 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: var(--accent);
+        }
+
+        .value-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .value-card .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* === SKILLS === */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-group {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .skill-group-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            padding: 4px 10px;
+            background: var(--bg-hover);
+            border-radius: 6px;
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+        }
+
+        /* === CAREER === */
+        .career-item {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .career-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .career-company {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .career-period {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .career-current {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            background: var(--green-dim);
+            color: var(--green);
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .career-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .career-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .keyword {
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .keyword-blue { background: var(--accent-dim); color: var(--accent); }
+        .keyword-purple { background: var(--purple-dim); color: var(--purple); }
+        .keyword-orange { background: var(--orange-dim); color: var(--orange); }
+
+        /* === PROJECTS === */
+        .project-item {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .project-item:hover {
+            border-color: var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-title {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .project-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .project-list {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        .project-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .project-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-list li strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .project-tag {
+            padding: 3px 10px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+
+        /* === EDUCATION === */
+        .edu-card {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .edu-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .edu-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        /* === SIDEBAR TOC === */
+        .toc {
+            position: fixed;
+            left: calc(50% - 540px);
+            top: 120px;
+            width: 140px;
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            .toc { display: block; }
+        }
+
+        .toc a {
+            display: block;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .toc a:hover, .toc a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 28px; }
+            .hero-subtitle { font-size: 16px; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .career-header { flex-direction: column; }
+            .project-header { flex-direction: column; }
+        }
+
+        @media print {
+            .header, .toc { display: none; }
+            body { background: #fff; color: #000; }
+            .hero { padding-top: 20px; }
+            section { padding: 24px 0; }
+            .career-item, .project-item, .value-card, .skill-group, .summary-item, .edu-card {
+                background: #fff;
+                border-color: #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-inner">
+        <a href="#" class="header-logo">박창선<span>.</span></a>
+        <nav class="nav">
+            <a href="#summary" class="active">요약</a>
+            <a href="#values">관심사</a>
+            <a href="#skills">기술</a>
+            <a href="#career">경력</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#education">학력</a>
+            <a href="./blog/">블로그</a>
+        </nav>
+    </div>
+</header>
+
+<!-- SIDEBAR TOC -->
+<aside class="toc">
+    <a href="#summary">세 줄 요약</a>
+    <a href="#values">추구하는 것</a>
+    <a href="#skills">기술 스택</a>
+    <a href="#career">경력 사항</a>
+    <a href="#projects">프로젝트</a>
+    <a href="#education">학력</a>
+</aside>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">Open to opportunities</div>
+        <h1>안녕하세요,<br><span class="gradient">박창선</span>입니다.</h1>
+        <p class="hero-subtitle">Backend Developer</p>
+        <div class="hero-links">
+            <a href="https://github.com/chaosen0521" target="_blank" class="hero-link">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                GitHub
+            </a>
+            <a href="mailto:chaplk@naver.com" class="hero-link">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809v6.442zm13-8.181v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81z"/></svg>
+                Email
+            </a>
+            <a href="./blog/" class="hero-link">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 0h10a3 3 0 013 3v10a3 3 0 01-3 3H3a3 3 0 01-3-3V3a3 3 0 013-3zm1.5 4a.5.5 0 00-.5.5v7a.5.5 0 001 0V9h2.5a2.5 2.5 0 000-5H4.5zM5 8V5h2a1.5 1.5 0 010 3H5z"/></svg>
+                Blog
+            </a>
+            <a href="https://mdpang.tistory.com" target="_blank" class="hero-link">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 106.5 6.5A6.507 6.507 0 008 1.5zm0-1.5a8 8 0 110 16A8 8 0 018 0zm.75 4a.75.75 0 00-1.5 0v4c0 .414.336.75.75.75h3a.75.75 0 000-1.5H8.75V4z"/></svg>
+                Tistory
+            </a>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SUMMARY -->
+    <section id="summary">
+        <div class="section-header">
+            <h2>세 줄로 요약하자면, 저는</h2>
+            <div class="section-line"></div>
+        </div>
+        <ul class="summary-list">
+            <li class="summary-item">공공기관 및 기업 대상 SI 프로젝트를 수행하며, 요구사항 분석부터 설계, 개발, 운영까지 전 과정에 참여하는 <strong>백엔드 개발자</strong>입니다.</li>
+            <li class="summary-item">클라이언트와의 긴밀한 소통을 통해 실질적인 문제를 해결하고, <strong>정량적인 성과</strong>로 검증하는 것을 좋아합니다.</li>
+            <li class="summary-item">사이드 프로젝트를 통해 새로운 기술을 끊임없이 학습하고, 기술 블로그를 통해 <strong>경험을 공유</strong>하는 개발자입니다.</li>
+        </ul>
+    </section>
+
+    <hr class="divider">
+
+    <!-- VALUES -->
+    <section id="values">
+        <div class="section-header">
+            <h2>추구하는 것과 관심사는</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>🔧 실질적인 문제 해결</h3>
+                <p>개발은 결국 문제를 해결하는 일이라고 생각합니다. 식약처 의료기기 검토 프로젝트에서 <span class="highlight">1,200건의 PDF를 수작업으로 검토하던 프로세스를 자동화</span>하여 검토 시간을 80% 절감한 경험이 있습니다. 기술을 통해 실무의 비효율을 개선하는 과정에서 큰 보람을 느낍니다.</p>
+            </div>
+            <div class="value-card">
+                <h3>📊 대용량 데이터 처리</h3>
+                <p>MVNO CRM 프로젝트에서 <span class="highlight">14개의 배치 프로그램을 설계하고, 일일 최대 192만 건의 데이터를 30분 이내에 처리</span>하는 시스템을 구축했습니다. 데이터의 안정적인 수집과 적재, 그리고 이를 효율적으로 처리하는 배치 설계에 관심이 많습니다.</p>
+            </div>
+            <div class="value-card">
+                <h3>📚 끊임없는 학습</h3>
+                <p>업무 외 시간에도 사이드 프로젝트를 통해 새로운 기술을 실습합니다. 현재 Tablelog 프로젝트에서 <span class="highlight">WebSocket, QueryDSL, Prometheus 모니터링</span> 등을 적용해보고 있으며, 앞으로 Kafka, Elasticsearch, RAG 기반 AI 시스템까지 학습 범위를 확장할 계획입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>기술 스택</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-group-title">Language</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Framework</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">PHP</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Database</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MariaDB</span>
+                    <span class="skill-tag">Redis</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">AI / Chatbot</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Rasa</span>
+                    <span class="skill-tag">Rasa Action</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Infra & DevOps</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-title">Frontend</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Svelte</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CAREER -->
+    <section id="career">
+        <div class="section-header">
+            <h2>경력 사항</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div>
+                    <div class="career-company">(주)스페이스아르</div>
+                    <div class="career-desc">KT 챗봇 개발 및 MVNO CRM 프로젝트 백엔드 개발</div>
+                </div>
+                <div style="text-align: right;">
+                    <span class="career-current">재직중</span>
+                    <div class="career-period">2025.05 ~ 현재</div>
+                </div>
+            </div>
+            <div class="career-keywords">
+                <span class="keyword keyword-blue">Rasa</span>
+                <span class="keyword keyword-blue">Redis</span>
+                <span class="keyword keyword-purple">FastAPI</span>
+                <span class="keyword keyword-purple">PostgreSQL</span>
+            </div>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div>
+                    <div class="career-company">(주)퓨처플랫폼</div>
+                    <div class="career-desc">TTA 홈페이지 분석/설계, 의료기기 검토 모델 개발, 청소년시설 시스템 유지보수</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="career-period">2024.08 ~ 2025.04</div>
+                    <div style="font-size:12px; color:var(--text-muted);">9개월</div>
+                </div>
+            </div>
+            <div class="career-keywords">
+                <span class="keyword keyword-blue">Spring Boot</span>
+                <span class="keyword keyword-blue">MySQL</span>
+                <span class="keyword keyword-purple">Python</span>
+                <span class="keyword keyword-orange">PHP</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>참여 프로젝트</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <!-- KT 챗봇 -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">KT 챗봇 개발</div>
+                <div class="career-period">2025.05 ~ 현재</div>
+            </div>
+            <div class="project-sub">(주)스페이스아르</div>
+            <ul class="project-list">
+                <li>KOS 프로그램 연동 요금제 조회 및 지존문의 등록 시스템 개발</li>
+                <li>약 <strong>360건의 요금제 시나리오</strong>를 연동하여 챗봇 대화 흐름 구현</li>
+                <li>월 약 <strong>100명의 사용자</strong>가 이용하는 서비스로 현재 운영 중</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Rasa</span>
+                <span class="project-tag">Rasa Action</span>
+                <span class="project-tag">Redis</span>
+            </div>
+        </div>
+
+        <!-- MVNO CRM -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">MVNO CRM 프로젝트</div>
+                <div class="career-period">2025.11 ~ 현재</div>
+            </div>
+            <div class="project-sub">(주)스페이스아르</div>
+            <ul class="project-list">
+                <li><strong>14개 배치 프로그램</strong> 설계 및 개발 (SFTP 기반 파일 수집 → PostgreSQL 적재)</li>
+                <li>일일 최대 <strong>192만 건</strong>의 데이터를 처리하는 대용량 배치 시스템 구축</li>
+                <li>가장 무거운 배치 기준 처리 시간 <strong>30분 이내</strong> 달성</li>
+                <li>TM 캠페인 관리 기능 개발 (캠페인 조회, 대상자 관리, 반응 등록)</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">PostgreSQL</span>
+            </div>
+        </div>
+
+        <!-- TTA -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">TTA 홈페이지 구축</div>
+                <div class="career-period">2024.08 ~ 2024.12</div>
+            </div>
+            <div class="project-sub">(주)퓨처플랫폼</div>
+            <ul class="project-list">
+                <li>표준화 위원회 및 국제표준화전문가 <strong>2개 도메인</strong> 분석 및 설계 담당</li>
+                <li>클라이언트와 협업하여 요구사항 분석 및 백엔드 API 설계 진행</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">MySQL</span>
+            </div>
+        </div>
+
+        <!-- 식약처 -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">식약처 1등급 의료기기 사전 검토 모델 개발</div>
+                <div class="career-period">2024</div>
+            </div>
+            <div class="project-sub">(주)퓨처플랫폼 · 연구과제</div>
+            <ul class="project-list">
+                <li><strong>1,200건</strong>의 PDF 문서에서 데이터 추출 및 부적합 단어/문장 검출 모델 개발</li>
+                <li>검출률 약 <strong>90%</strong> 달성</li>
+                <li>기존 수작업 대비 검토 시간 <strong>80% 절감</strong></li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+            </div>
+        </div>
+
+        <!-- 청소년시설 -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">서울시 청소년시설 회원관리 시스템 유지보수</div>
+                <div class="career-period">2024</div>
+            </div>
+            <div class="project-sub">(주)퓨처플랫폼</div>
+            <ul class="project-list">
+                <li>서울시 전체 청소년 센터 대상 회원관리 시스템 유지보수</li>
+                <li>결제 및 수업 관리 기능 유지보수, 하루 평균 <strong>10건</strong>의 이슈 처리</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+            </div>
+        </div>
+
+        <!-- Tablelog -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Tablelog Backend — 레시피 공유 커뮤니티</div>
+                <div class="career-period">2026.02 ~ 진행 중</div>
+            </div>
+            <div class="project-sub">개인 프로젝트</div>
+            <ul class="project-list">
+                <li>Spring Boot 3.4 기반 RESTful API 설계 및 개발 (<strong>10개 도메인</strong>)</li>
+                <li>JWT 인증 + 소셜 로그인(카카오, 구글) 구현</li>
+                <li>WebSocket/STOMP 기반 실시간 1:1 채팅 시스템 구축</li>
+                <li>QueryDSL을 활용한 동적 검색 및 필터링, Slice 기반 무한 스크롤</li>
+                <li>Spring Actuator + Prometheus 모니터링 구성</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">JPA</span>
+                <span class="project-tag">QueryDSL</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Redis</span>
+                <span class="project-tag">WebSocket</span>
+                <span class="project-tag">AWS S3</span>
+                <span class="project-tag">Docker</span>
+            </div>
+        </div>
+
+        <!-- Extra -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Extra — 보조출연자 캐스팅 관리 플랫폼</div>
+                <div class="career-period">2024.07 ~ 2024.08</div>
+            </div>
+            <div class="project-sub">팀 프로젝트 (10인: PM 1 + 디자인 2 + FE 4 + BE 3)</div>
+            <ul class="project-list">
+                <li><strong>13개 도메인</strong> 기반 DDD 설계 및 RESTful API 개발</li>
+                <li>Spring Security + JWT 인증/인가 (사용자/기업/관리자 역할 분리)</li>
+                <li>캐스팅 지원 → 승인 → 의상 컨펌 → QR 출석 워크플로우 전체 백엔드 개발</li>
+                <li>AWS S3 Presigned URL 기반 파일 업로드, Apache POI 출석 Excel 내보내기</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Spring Boot 3.3</span>
+                <span class="project-tag">Spring Security</span>
+                <span class="project-tag">JPA</span>
+                <span class="project-tag">MariaDB</span>
+                <span class="project-tag">Redis</span>
+                <span class="project-tag">AWS S3</span>
+                <span class="project-tag">Docker</span>
+            </div>
+        </div>
+
+        <!-- 등대 -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">등대 — AI 여행 추천 플랫폼</div>
+                <div class="career-period">2024</div>
+            </div>
+            <div class="project-sub">팀 프로젝트 (4인, 백엔드 리드)</div>
+            <ul class="project-list">
+                <li>여행지 및 방문지 CRUD 설계/개발 (백엔드 핵심 기능 담당)</li>
+                <li>네이버 검색 API 연동, DB 설계 및 아키텍처 설계</li>
+                <li>Docker를 활용한 EC2 배포</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">JPA</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">AWS</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">React</span>
+            </div>
+        </div>
+
+        <!-- 딸깍 레시피 -->
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">딸깍! 레시피 — 원클릭 레시피 재료 주문</div>
+                <div class="career-period">2024</div>
+            </div>
+            <div class="project-sub">팀 프로젝트</div>
+            <ul class="project-list">
+                <li>Spring Boot 기반 백엔드 API 개발</li>
+                <li>GitHub Actions를 활용한 CI/CD 파이프라인 구축</li>
+                <li>AWS 클라우드 인프라 구성 및 Docker 배포</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">JPA</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Svelte</span>
+                <span class="project-tag">AWS</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">GitHub Actions</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-header">
+            <h2>학력</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="edu-card">
+            <div class="career-header">
+                <h3>명지대학교</h3>
+                <div class="career-period">2017.03 ~ 2025.02</div>
+            </div>
+            <p>컴퓨터공학과 졸업</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 박창선. Built with ♥</p>
+    </footer>
+
+</div>
+
+<script>
+// Active nav highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav a, .toc a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박창선 | Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/blog.css" />
+  <meta name="color-scheme" content="dark">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="header-logo" href="../index.html">박창선<span>.</span></a>
+      <nav class="nav">
+        <a href="./index.html" class="active">블로그</a>
+        <a href="../index.html#projects">프로젝트</a>
+        <a href="../index.html#career">경력</a>
+        <a href="../index.html#skills">기술</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="hero">
+      <h1><span class="gradient">기록</span>으로 성장합니다</h1>
+      <p>학습, 문제 해결, 회고를 정리하는 개인 블로그입니다.</p>
+      <div class="toolbar">
+        <input id="search" class="input" placeholder="제목/태그/요약 검색" autocomplete="off" />
+        <span class="badge">Posts: <strong style="color: var(--text-primary);" id="count">-</strong></span>
+        <span class="badge" id="status" style="border-color: transparent; background: transparent;"></span>
+      </div>
+    </section>
+
+    <section class="list" id="posts" aria-live="polite"></section>
+
+    <footer class="footer">
+      <p>© 2026 박창선. Static Blog.</p>
+    </footer>
+  </main>
+
+  <script src="./assets/blog.js"></script>
+</body>
+</html>
+
