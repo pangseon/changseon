@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "blog/uploads"
+public_folder: "/blog/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    folder: "content/posts"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "날짜", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "요약", name: "excerpt", widget: "text", required: false }
+      - { label: "태그", name: "tags", widget: "list", required: false, default: [] }
+      - { label: "본문", name: "body", widget: "markdown" }
+
