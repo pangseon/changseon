@@ -157,7 +157,7 @@ async function cleanStaleHtml(generatedSlugs) {
   }
 }
 
-async function main() {
+export async function buildBlog() {
   await ensureDir(BLOG_POSTS_DIR);
 
   const mdFiles = await listMarkdownPosts();
@@ -196,8 +196,16 @@ async function main() {
   console.log(`[blog] generated ${posts.length} posts`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+function isDirectRun() {
+  // ESM entrypoint check
+  const direct = new URL(`file://${process.argv[1]}`).href === import.meta.url;
+  return direct;
+}
+
+if (isDirectRun()) {
+  buildBlog().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
 

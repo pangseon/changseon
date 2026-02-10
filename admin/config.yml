@@ -4,13 +4,90 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: "blog/uploads"
-public_folder: "/blog/uploads"
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
+  - name: "resume"
+    label: "이력서 관리"
+    files:
+      - name: "resume-data"
+        label: "이력서 내용"
+        file: "content/resume.json"
+        format: "json"
+        fields:
+          - label: "히어로"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "이름", name: "name", widget: "string" }
+              - { label: "직함", name: "subtitle", widget: "string" }
+              - { label: "배지", name: "badge", widget: "string" }
+              - { label: "GitHub URL", name: "github", widget: "string" }
+              - { label: "이메일", name: "email", widget: "string" }
+
+          - label: "세 줄 요약"
+            name: "summary"
+            widget: "list"
+            fields:
+              - { label: "내용", name: "text", widget: "text" }
+              - { label: "강조 부분", name: "highlight", widget: "string" }
+
+          - label: "추구하는 것과 관심사"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "이모지", name: "emoji", widget: "string" }
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "설명", name: "description", widget: "text" }
+
+          - label: "기술 스택"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "그룹명", name: "group", widget: "string" }
+              - { label: "기술 태그", name: "tags", widget: "list", field: { label: "태그", name: "tag", widget: "string" } }
+
+          - label: "경력"
+            name: "career"
+            widget: "list"
+            fields:
+              - { label: "회사명", name: "company", widget: "string" }
+              - { label: "설명", name: "description", widget: "string" }
+              - { label: "기간", name: "period", widget: "string" }
+              - { label: "근무기간", name: "duration", widget: "string", required: false }
+              - { label: "재직중", name: "current", widget: "boolean", default: false }
+              - label: "키워드"
+                name: "keywords"
+                widget: "list"
+                fields:
+                  - { label: "텍스트", name: "text", widget: "string" }
+                  - { label: "색상", name: "color", widget: "select", options: ["blue", "purple", "orange"] }
+
+          - label: "프로젝트"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "제목", name: "title", widget: "string" }
+              - { label: "소속", name: "subtitle", widget: "string" }
+              - { label: "기간", name: "period", widget: "string" }
+              - { label: "설명", name: "description", widget: "text" }
+              - { label: "태그", name: "tags", widget: "list", field: { label: "태그", name: "tag", widget: "string" } }
+              - { label: "상세 제목", name: "detail_title", widget: "string" }
+              - { label: "상세 내용 (HTML)", name: "detail_content", widget: "text" }
+
+          - label: "학력"
+            name: "education"
+            widget: "object"
+            fields:
+              - { label: "학교", name: "school", widget: "string" }
+              - { label: "기간", name: "period", widget: "string" }
+              - { label: "전공", name: "major", widget: "string" }
+
   - name: "posts"
-    label: "Posts"
-    label_singular: "Post"
+    label: "블로그 글"
+    label_singular: "글"
     folder: "content/posts"
     create: true
     delete: true
@@ -23,4 +100,3 @@ collections:
       - { label: "요약", name: "excerpt", widget: "text", required: false }
       - { label: "태그", name: "tags", widget: "list", required: false, default: [] }
       - { label: "본문", name: "body", widget: "markdown" }
-
