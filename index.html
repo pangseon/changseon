@@ -1302,8 +1302,7 @@ const projectDetails = {
         <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">성과:</strong> 현재 월 100명 이상의 사용자가 이용 중이며, 고객 문의 등록부터 담당자 배정, 처리 현황 추적까지 전체 워크플로우를 자동화했습니다.</p>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">🔧 트러블슈팅</p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Rasa 인텐트 충돌 문제:</strong> 요금제 조회와 요금제 비교 인텐트가 유사한 표현에서 혼동되는 현상이 발생했습니다. 학습 데이터를 분석한 결과, 두 인텐트의 예시 문장이 겹치는 부분이 많았고, 각 인텐트의 키워드 경계를 명확히 재설계하고 학습 데이터를 정제하여 분류 정확도를 개선했습니다.</p>
-        <p><strong style="color:var(--text-primary);">Redis 세션 만료 후 대화 유실:</strong> 사용자가 대화 도중 일정 시간이 지나면 이전 맥락이 사라지는 문제가 있었습니다. Redis TTL이 짧게 설정되어 있었고, TTL을 사용자 활동 기준으로 갱신하도록 수정하여 대화 흐름이 끊기지 않도록 해결했습니다.</p>`
+        <p><strong style="color:var(--text-primary);">Redis Cluster 환경에서 Rasa TrackerStore 호환 문제:</strong> 내부망 환경에서 Docker 이미지를 반입하여 운영하고 있었는데, 사용 가능한 Redis가 클러스터 구조였습니다. Rasa가 기본 제공하는 RedisTrackerStore는 단일 노드 Redis만 지원하여 연결 오류가 발생했고, Rasa 라이브러리의 RedisTrackerStore 소스 코드를 직접 분석하여 Redis Cluster에 대응하는 커스텀 TrackerStore를 구현해 해결했습니다.</p>`
     },
     'mvno-crm': {
         title: '배경 & 과정',
