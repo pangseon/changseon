@@ -870,6 +870,14 @@
                 </div>
             </div>
             <div class="skill-group">
+                <div class="skill-group-title">Control / IoT</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">SCADA</span>
+                    <span class="skill-tag">PLC</span>
+                    <span class="skill-tag">DDC</span>
+                </div>
+            </div>
+            <div class="skill-group">
                 <div class="skill-group-title">Frontend</div>
                 <div class="skill-tags">
                     <span class="skill-tag">React</span>
@@ -886,6 +894,42 @@
         <div class="section-header">
             <h2>경력 사항</h2>
             <div class="section-line"></div>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div>
+                    <div class="career-company">(주)다손테크</div>
+                    <div class="career-desc">SCADA 엔지니어링 및 빌딩 전력제어, 태양광 감시 시스템</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="career-period">2021.12 ~ 2022.06</div>
+                    <div style="font-size:12px; color:var(--text-muted);">7개월</div>
+                </div>
+            </div>
+            <div class="career-keywords">
+                <span class="keyword keyword-blue">SCADA</span>
+                <span class="keyword keyword-purple">PLC</span>
+                <span class="keyword keyword-orange">전력제어</span>
+            </div>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div>
+                    <div class="career-company">(주)KDC</div>
+                    <div class="career-desc">조명제어 및 기기설비 엔지니어링, DDC/SCADA 기반 현장 제어</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="career-period">2020.11 ~ 2021.12</div>
+                    <div style="font-size:12px; color:var(--text-muted);">1년 1개월</div>
+                </div>
+            </div>
+            <div class="career-keywords">
+                <span class="keyword keyword-blue">DDC</span>
+                <span class="keyword keyword-purple">SCADA</span>
+                <span class="keyword keyword-orange">설비제어</span>
+            </div>
         </div>
 
         <div class="career-item">
@@ -1032,6 +1076,50 @@
             <div class="project-tags">
                 <span class="project-tag">PHP</span>
                 <span class="project-tag">MySQL</span>
+            </div>
+        </div>
+
+        <!-- SCADA 엔지니어링 -->
+        <div class="project-item" data-detail="scada-eng">
+            <div class="project-header">
+                <div class="project-title">SCADA 엔지니어링 — 빌딩 전력제어 및 태양광 감시</div>
+                <div class="career-period">2021.12 ~ 2022.06</div>
+            </div>
+            <div class="project-sub">(주)다손테크 · SCADA 엔지니어</div>
+            <ul class="project-list">
+                <li><strong>서울대학교</strong> SCADA 엔지니어링 — 빌딩 전력제어 및 태양광 감시 시스템 구축, 프로젝트 관리 및 유지보수</li>
+                <li><strong>상암 MBC</strong> SCADA 엔지니어링 — 빌딩 전력제어 지원을 위한 제어 로직 작성</li>
+                <li><strong>서울 성모병원</strong> SCADA 엔지니어링 — 빌딩 전력제어 지원을 위한 제어 로직 작성</li>
+                <li><strong>파주 LG디스플레이 공장</strong> SCADA 엔지니어링 — 빌딩 전력제어 지원을 위한 제어 로직 작성</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">SCADA</span>
+                <span class="project-tag">PLC</span>
+                <span class="project-tag">전력제어</span>
+                <span class="project-tag">태양광 감시</span>
+            </div>
+        </div>
+
+        <!-- DDC/설비 제어 -->
+        <div class="project-item" data-detail="ddc-eng">
+            <div class="project-header">
+                <div class="project-title">DDC/SCADA 기반 설비 제어 엔지니어링</div>
+                <div class="career-period">2020.11 ~ 2021.12</div>
+            </div>
+            <div class="project-sub">(주)KDC · 제어 엔지니어</div>
+            <ul class="project-list">
+                <li><strong>한국체육대학교</strong> 조명제어 — 현장 상황 확인 및 프로젝트 관리, 필요 로직 작성 및 S/W 업데이트</li>
+                <li><strong>고리 원자력 발전소</strong> 조명제어 — 현장 프로젝트 관리, 제어 로직 작성 및 S/W 업데이트</li>
+                <li><strong>수원 연화장</strong> 기기설비 — DDC를 활용한 로직 작성 후 기기설비 제어</li>
+                <li><strong>단원구청</strong> 기기설비 — 현장 문제 분석 후 제어 로직 수정 작업</li>
+                <li><strong>충남 한국농어촌공사</strong> SCADA 활용 현장 관측 제어 지원</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">DDC</span>
+                <span class="project-tag">SCADA</span>
+                <span class="project-tag">PLC</span>
+                <span class="project-tag">조명제어</span>
+                <span class="project-tag">설비제어</span>
             </div>
         </div>
 
@@ -1263,6 +1351,18 @@ const projectDetails = {
         <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">담당 업무:</strong> 여행지/방문지 CRUD 구현, 네이버 검색 API 연동, DB 설계, 프로젝트 아키텍처 설계, AWS S3 파일 관리, Docker를 활용한 EC2 배포, React 프론트 개발 참여, 최종 발표까지 폭넓게 담당했습니다.</p>
         <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">주요 기능:</strong> 소셜 로그인(카카오, 네이버), 여행지 등록/검색, 방문지(카페·관광지·식당·쇼핑몰) 상세 정보 조회, ChatGPT API 기반 맞춤 여행 추천 기능을 구현했습니다.</p>
         <p><strong style="color:var(--text-primary);">설계:</strong> Figma로 와이어프레임과 플로우차트를 작성하고, 시스템 아키텍처를 설계한 뒤 팀원들과 공유하며 개발을 진행했습니다.</p>`
+    },
+    'scada-eng': {
+        title: '배경 & 상세',
+        content: `<p style="margin-bottom:12px;">서울대학교, 상암 MBC, 서울 성모병원, 파주 LG디스플레이 공장 등 <strong>대형 건물/공장</strong>의 전력제어 시스템을 SCADA로 구축하고 운영했습니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">핵심 업무:</strong> 빌딩 내 전력 설비의 실시간 모니터링, 태양광 발전 감시, 전력 사용량 데이터 수집 및 시각화를 위한 SCADA 화면 설계 및 제어 로직을 작성했습니다.</p>
+        <p><strong style="color:var(--text-primary);">역할:</strong> 프로젝트 관리부터 현장 엔지니어링, 유지보수까지 전 과정을 담당하며, 클라이언트 요구사항에 맞춘 맞춤형 제어 시스템을 구현했습니다.</p>`
+    },
+    'ddc-eng': {
+        title: '배경 & 상세',
+        content: `<p style="margin-bottom:12px;">고리 원자력 발전소, 한국체육대학교 등 <strong>다양한 시설</strong>에서 DDC/SCADA 기반 조명제어 및 기기설비 제어를 수행했습니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">핵심 업무:</strong> 현장 상황을 직접 확인하고 문제를 분석한 뒤, DDC를 활용하여 제어 로직을 작성하고 S/W 업데이트를 진행했습니다. 한국농어촌공사에서는 SCADA를 활용한 원격 관측 제어를 지원했습니다.</p>
+        <p><strong style="color:var(--text-primary);">경험:</strong> 원자력 발전소라는 특수한 환경에서 안전 기준을 준수하며 엔지니어링을 수행한 경험이 있으며, 현장 트러블슈팅과 설비 제어 최적화를 통해 시스템 안정성을 확보했습니다.</p>`
     },
     'click-recipe': {
         title: '배경 & 과정',
