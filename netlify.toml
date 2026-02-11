@@ -1,9 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "echo 'Deploy ready'"
   publish = "."
 
 [[headers]]
   for = "/admin/*"
   [headers.values]
     X-Robots-Tag = "noindex"
-
