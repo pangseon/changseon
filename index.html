@@ -849,7 +849,7 @@
             </div>
             <div class="value-card">
                 <h3>⚙️ 배치 설계와 성능 최적화</h3>
-                <p>하드웨어가 아닌 설계와 알고리즘으로 문제를 해결하는 것을 좋아합니다. 단건 INSERT에서 COPY + 벌크 INSERT + 5,000건 청크 분할로 전환해 일일 192만 건 처리 시간을 92% 단축했고, 14개 배치의 의존 관계를 플로우차트로 시각화하며 실행 순서를 설계했습니다. 제한된 자원 안에서 구조 자체를 개선하는 과정에 관심이 많습니다.</p>
+                <p>하드웨어가 아닌 설계와 알고리즘으로 문제를 해결하는 것을 좋아합니다. 단건 INSERT에서 COPY + 벌크 INSERT + 5,000건 청크 분할로 전환해 일일 약 192만 건 처리 시간을 92% 단축했고, 14개 배치의 의존 관계를 플로우차트로 시각화하며 실행 순서를 설계했습니다. 제한된 자원 안에서 구조 자체를 개선하는 과정에 관심이 많습니다.</p>
             </div>
             <div class="value-card">
                 <h3>📚 끊임없는 학습</h3>
@@ -1257,7 +1257,7 @@ window.addEventListener('scroll', () => {
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">🔧 트러블슈팅</p>
         <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">프로젝트 설계의 어려움:</strong> 배치 프로그램 14개의 실행 순서·의존관계·예외 처리를 어떻게 구조화할지 기존 레퍼런스가 없었습니다. 각 배치의 입력/출력 데이터를 먼저 정리하고, 의존 관계를 플로우 차트로 시각화한 뒤 실행 순서를 확정하는 방식으로 전체 설계를 완성했습니다.</p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">대량 데이터 적재 시 타임아웃:</strong> 일일 192만 건 데이터를 INSERT하는 과정에서 트랜잭션 타임아웃이 발생했습니다. 단건 INSERT를 COPY 명령과 벌크 INSERT로 변경하고, 청크 단위(5,000건)로 분할 처리하여 30분 이내에 완료되도록 개선했습니다.</p>`
+        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">대량 데이터 적재 시 타임아웃:</strong> 일일 약 192만 건 데이터를 INSERT하는 과정에서 트랜잭션 타임아웃이 발생했습니다. 단건 INSERT를 COPY 명령과 벌크 INSERT로 변경하고, 청크 단위(5,000건)로 분할 처리하여 30분 이내에 완료되도록 개선했습니다.</p>`
     },
     'tta': {
         title: '배경 & 과정',
