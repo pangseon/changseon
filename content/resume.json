@@ -4,20 +4,16 @@
     "subtitle": "Backend Developer",
     "badge": "Open to opportunities",
     "github": "https://github.com/chaosen0521",
-    "email": "chaplk@naver.com"
+    "email": "chaosen0521@gmail.com"
   },
   "summary": [
     {
-      "text": "깔끔한 코드와 명확한 설계를 추구하며, 사용자가 쓰기 편한 프로그램을 만들고 싶은",
-      "highlight": "백엔드 개발자"
+      "text": "문제를 만나면 원인부터 파고드는 편입니다. Redis Cluster에서 Rasa TrackerStore가 호환되지 않을 때, 라이브러리 소스 코드를 직접 분석해 커스텀 구현으로 해결했습니다. 문서가 없으면 코드를 읽고, 레퍼런스가 없으면 직접 설계합니다.",
+      "highlight": "문서가 없으면 코드를 읽고, 레퍼런스가 없으면 직접 설계합니다."
     },
     {
-      "text": "실무에서 마주한 오류를 회피하지 않고 끝까지 파고들며, 해결 경험을 기록으로 남깁니다.",
-      "highlight": "시행착오가 가장 좋은 교재"
-    },
-    {
-      "text": "다양한 사람들과 협업하며 서로의 강점을 끌어내고,",
-      "highlight": "업무 효율의 극대화"
+      "text": "퇴근 후에는 Tablelog 사이드 프로젝트로 QueryDSL, WebSocket, Prometheus를 직접 적용해보고, 토비의 스프링으로 내부 동작 원리를 공부합니다. 코드를 작성하는 것만큼, 왜 그렇게 동작하는지를 이해하는 것이 중요하다고 생각합니다.",
+      "highlight": "코드를 작성하는 것만큼, 왜 그렇게 동작하는지를 이해하는 것이 중요하다고 생각합니다."
     }
   ],
   "values": [
@@ -368,5 +364,6 @@
     "school": "명지대학교",
     "period": "2017.03 ~ 2025.02",
     "major": "컴퓨터공학과 졸업"
-  }
+  },
+  "sign": "박창선"
 }
