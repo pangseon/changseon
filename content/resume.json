@@ -74,14 +74,6 @@
       ]
     },
     {
-      "group": "Control / IoT",
-      "tags": [
-        "SCADA",
-        "PLC",
-        "DDC"
-      ]
-    },
-    {
       "group": "Frontend",
       "tags": [
         "React",
@@ -136,48 +128,6 @@
         },
         {
           "text": "PHP",
-          "color": "orange"
-        }
-      ]
-    },
-    {
-      "company": "(주)다손테크",
-      "description": "SCADA 엔지니어링 및 빌딩 전력제어, 태양광 감시 시스템",
-      "period": "2021.12 ~ 2022.06",
-      "duration": "7개월",
-      "current": false,
-      "keywords": [
-        {
-          "text": "SCADA",
-          "color": "blue"
-        },
-        {
-          "text": "PLC",
-          "color": "purple"
-        },
-        {
-          "text": "전력제어",
-          "color": "orange"
-        }
-      ]
-    },
-    {
-      "company": "(주)KDC",
-      "description": "조명제어 및 기기설비 엔지니어링, DDC/SCADA 기반 현장 제어",
-      "period": "2020.11 ~ 2021.12",
-      "duration": "1년 1개월",
-      "current": false,
-      "keywords": [
-        {
-          "text": "DDC",
-          "color": "blue"
-        },
-        {
-          "text": "SCADA",
-          "color": "purple"
-        },
-        {
-          "text": "설비제어",
           "color": "orange"
         }
       ]
@@ -255,37 +205,6 @@
       ],
       "detail_title": "배경 & 과정",
       "detail_content": "<p style=\"margin-bottom:12px;\">서울시 전체 청소년 센터에서 사용하는 회원관리 시스템의 유지보수를 담당했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">결제 시스템:</strong> 결제 모듈의 안정성을 유지하고, 결제 오류 처리 및 로그 관리, 정산 데이터 관리를 수행했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">수업 관리:</strong> 수업 등록/조회, 수강생 관리, 출결 관리 기능을 개선했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">대응:</strong> 하루 평균 10건의 사용자 이슈를 신속하게 처리하며 시스템 안정 운영을 유지했습니다.</p>\n        <hr style=\"border:none;border-top:1px solid var(--border);margin:16px 0;\">\n        <p style=\"margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;\">🔧 트러블슈팅</p>\n        <p style=\"margin-bottom:8px;\"><strong style=\"color:var(--text-primary);\">부족한 인수인계 문서로 인한 시스템 파악 지연:</strong> 전달받은 인수인계 문서가 부족하여 레거시 시스템의 구조와 비즈니스 로직을 파악하는 데 상당한 시간이 소요되었습니다. 실제 문의 및 요청사항을 처리하면서 시스템을 역추적하는 방식으로 이해도를 높였고, 이 과정에서 업무 프로세스를 재정립하여 이후 유지보수 효율을 개선했습니다.</p>\n        "
-    },
-    {
-      "id": "scada-eng",
-      "title": "SCADA 엔지니어링 — 빌딩 전력제어 및 태양광 감시",
-      "subtitle": "(주)다손테크 · SCADA 엔지니어",
-      "period": "2021.12 ~ 2022.06",
-      "description": "서울대학교, 상암 MBC 등 대형 건물의 전력제어 시스템 구축",
-      "tags": [
-        "SCADA",
-        "PLC",
-        "전력제어",
-        "태양광 감시"
-      ],
-      "detail_title": "배경 & 상세",
-      "detail_content": "<p style=\"margin-bottom:12px;\">서울대학교, 상암 MBC, 서울 성모병원, 파주 LG디스플레이 공장 등 <strong>대형 건물/공장</strong>의 전력제어 시스템을 SCADA로 구축하고 운영했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">핵심 업무:</strong> 빌딩 내 전력 설비의 실시간 모니터링, 태양광 발전 감시, 전력 사용량 데이터 수집 및 시각화를 위한 SCADA 화면 설계 및 제어 로직을 작성했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">역할:</strong> 프로젝트 관리부터 현장 엔지니어링, 유지보수까지 전 과정을 담당하며, 클라이언트 요구사항에 맞춘 맞춤형 제어 시스템을 구현했습니다.</p>\n        <hr style=\"border:none;border-top:1px solid var(--border);margin:16px 0;\">\n        <p style=\"margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;\">🔧 트러블슈팅</p>\n        <p style=\"margin-bottom:8px;\"><strong style=\"color:var(--text-primary);\">PLC 통신 간헐적 단절:</strong> SCADA와 PLC 간 Modbus 통신이 간헐적으로 끊어져 실시간 데이터가 누락되는 현상이 있었습니다. 통신 케이블의 노이즈 간섭이 원인이었으며, 통신 재시도 로직 추가와 케이블 차폐 보강으로 해결했습니다.</p>\n        <p><strong style=\"color:var(--text-primary);\">태양광 발전량 데이터 이상값:</strong> 특정 시간대에 발전량이 비정상적으로 높게 기록되는 문제가 발생했습니다. 센서에서 넘어오는 아날로그 값의 스케일링 팩터가 잘못 설정되어 있었고, SCADA 태그의 스케일링을 현장 센서 스펙에 맞게 재설정하여 정확한 데이터를 확보했습니다.</p>"
-    },
-    {
-      "id": "ddc-eng",
-      "title": "DDC/SCADA 기반 설비 제어 엔지니어링",
-      "subtitle": "(주)KDC · 제어 엔지니어",
-      "period": "2020.11 ~ 2021.12",
-      "description": "조명제어 및 기기설비 엔지니어링, DDC/SCADA 기반 현장 제어",
-      "tags": [
-        "DDC",
-        "SCADA",
-        "PLC",
-        "조명제어",
-        "설비제어"
-      ],
-      "detail_title": "배경 & 상세",
-      "detail_content": "<p style=\"margin-bottom:12px;\">고리 원자력 발전소, 한국체육대학교 등 <strong>다양한 시설</strong>에서 DDC/SCADA 기반 조명제어 및 기기설비 제어를 수행했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">핵심 업무:</strong> 현장 상황을 직접 확인하고 문제를 분석한 뒤, DDC를 활용하여 제어 로직을 작성하고 S/W 업데이트를 진행했습니다. 한국농어촌공사에서는 SCADA를 활용한 원격 관측 제어를 지원했습니다.</p>\n        <p style=\"margin-bottom:12px;\"><strong style=\"color:var(--text-primary);\">경험:</strong> 원자력 발전소라는 특수한 환경에서 안전 기준을 준수하며 엔지니어링을 수행한 경험이 있으며, 현장 트러블슈팅과 설비 제어 최적화를 통해 시스템 안정성을 확보했습니다.</p>\n        <hr style=\"border:none;border-top:1px solid var(--border);margin:16px 0;\">\n        <p style=\"margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;\">🔧 트러블슈팅</p>\n        <p style=\"margin-bottom:8px;\"><strong style=\"color:var(--text-primary);\">DDC 제어 로직 오작동:</strong> 수원 연화장에서 공조기 제어 시 DDC 출력이 의도와 반대로 동작하는 문제가 있었습니다. 현장 배선을 확인한 결과 입출력 포트의 매핑이 잘못되어 있었고, DDC 프로그래밍의 I/O 포인트를 현장 배선도에 맞게 재매핑하여 해결했습니다.</p>\n        <p><strong style=\"color:var(--text-primary);\">원격 제어 통신 지연:</strong> 한국농어촌공사의 원격 관측소에서 SCADA 명령이 2~3초 지연되어 실시간 제어가 어려웠습니다. 네트워크 구간별 지연을 측정하여 병목 구간을 파악하고, 통신 프로토콜의 폴링 주기를 최적화하여 응답 시간을 1초 이내로 개선했습니다.</p>"
     },
     {
       "id": "tablelog",
