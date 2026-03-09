@@ -1101,11 +1101,9 @@
             </div>
             <div class="project-sub">팀 프로젝트 (BE 리드 · 5인)</div>
             <ul class="project-list">
-                <li>Spring Boot 3.4 / Java 19 기반 10개 도메인 RESTful API 설계 및 개발 (레시피·피드·실시간 채팅)</li>
-                <li>JWT + Redis Refresh Token 인증 아키텍처 설계 · Spring Security 권한 관리</li>
-                <li>WebSocket/STOMP 하트비트 설정으로 연결 안정성 90% → 99% 개선</li>
-                <li>JPA N+1 해소 · HikariCP 최적화로 쿼리 성능 2~3배 향상</li>
-                <li>Nginx keepalive 적용으로 ESTABLISHED 연결 0~1개 → 21개 유지</li>
+                <li>10개 도메인 백엔드 설계 및 RESTful API 개발 · QueryDSL 동적 검색 구현</li>
+                <li>WebSocket/STOMP 실시간 채팅 구현 (연결 안정성 90% → 99% 개선)</li>
+                <li>Docker · Nginx · AWS S3 인프라 구축 · Prometheus 모니터링 적용</li>
             </ul>
             <div class="project-tags">
                 <span class="project-tag">Spring Boot 3.4</span>
@@ -1344,21 +1342,19 @@ window.addEventListener('scroll', () => {
     },
     'tablelog': {
         title: '역할 & 트러블슈팅',
-        content: `<p style="margin-bottom:12px;">레시피 공유 및 요리 커뮤니티 플랫폼의 백엔드 시스템을 개발하는 팀 프로젝트입니다. BE 2명·FE 2명·PM 1명으로 구성된 5인 팀에서 백엔드 리드로 참여해 10개 도메인 전체를 설계·구현했습니다.</p>
+        content: `<p style="margin-bottom:12px;">레시피 공유 및 요리 커뮤니티 플랫폼의 백엔드를 설계하고 개발하는 팀 프로젝트입니다. BE 2명·FE 2명·PM 1명으로 구성된 5인 팀에서 백엔드 리드로 참여해 10개 도메인 전체를 설계·구현했습니다.</p>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">👤 주요 역할</p>
         <ul style="margin-bottom:12px;padding-left:16px;font-size:14px;line-height:1.8;">
-          <li>전체 백엔드 설계 및 개발 (10개 도메인: 레시피·피드·채팅·팔로우 등)</li>
-          <li>QueryDSL 기반 동적 검색·필터링 및 페이지네이션 구현</li>
-          <li>JWT + Redis Refresh Token 인증 아키텍처 설계</li>
-          <li>AWS S3 Presigned URL 파일 업로드 · Docker 기반 인프라 구성</li>
+          <li>10개 도메인 전체 백엔드 설계 및 RESTful API 개발 (레시피·피드·채팅·팔로우 등)</li>
+          <li>WebSocket/STOMP 실시간 채팅 구현 · JWT + Redis Refresh Token 인증 아키텍처 설계</li>
+          <li>Docker · Nginx · AWS S3 기반 인프라 구성 및 Prometheus 모니터링 적용</li>
         </ul>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">🔧 트러블슈팅</p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">WebSocket 연결 불안정 해결:</strong> STOMP CONNECT 후 2초 내 조기 종료 현상 발생. 하트비트 미설정으로 서버가 유휴 연결로 판단하는 것이 원인. heartbeatIncoming/Outgoing(10초) 설정과 Nginx proxy_read_timeout 연장으로 해결. <strong>연결 안정성 90% → 99% 개선.</strong></p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">JPA 성능 최적화:</strong> default_batch_fetch_size(100)로 N+1 문제 해소, HikariCP 연결 풀 최적화 및 OSIV 비활성화. <strong>전반적 쿼리 성능 2~3배 향상.</strong></p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Nginx keepalive 적용:</strong> 매 요청마다 신규 TCP 연결로 TIME_WAIT 20개 이상 누적 문제를 upstream keepalive 32 설정으로 해결. <strong>ESTABLISHED 연결 0~1개 → 21개 유지.</strong></p>
-        <p><strong style="color:var(--text-primary);">Tailscale 네트워크 최적화:</strong> 도쿄 DERP 릴레이 경유 지연을 포트 포워딩(UDP 41641, 3478) 설정으로 서버 직접 연결 수립. 응답 속도 체감 개선.</p>`
+        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">WebSocket 연결 불안정 해결:</strong> STOMP CONNECT 후 2초 내 조기 종료 현상 발생. 하트비트 미설정이 원인이었으며, heartbeatIncoming/Outgoing(10초) 설정과 Nginx proxy_read_timeout 연장으로 해결. <strong>연결 안정성 90% → 99% 개선.</strong></p>
+        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">JPA 성능 최적화:</strong> default_batch_fetch_size(100)로 N+1 문제 해소, HikariCP 최적화 및 OSIV 비활성화로 <strong>쿼리 성능 2~3배 향상.</strong></p>
+        <p><strong style="color:var(--text-primary);">Nginx keepalive 적용:</strong> 매 요청마다 신규 TCP 연결로 TIME_WAIT 누적 문제를 upstream keepalive 32 설정으로 해결. <strong>ESTABLISHED 연결 0~1개 → 21개 유지.</strong></p>`
     },
     'extra': {
         title: '담당 업무 & 상세',
