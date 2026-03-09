@@ -30,7 +30,7 @@
     {
       "emoji": "📚",
       "title": "끊임없는 학습",
-      "description": "업무 외 시간에도 사이드 프로젝트를 통해 새로운 기술을 실습합니다. 현재 Tablelog 프로젝트에서 WebSocket, QueryDSL, Prometheus 모니터링 등을 적용해보고 있으며, 앞으로 Kafka, Elasticsearch, RAG 기반 AI 시스템까지 학습 범위를 확장할 계획입니다."
+      "description": "업무 외 시간에도 사이드 프로젝트를 통해 새로운 기술을 실습합니다. 현재 Tablelog 프로젝트에서 WebSocket, QueryDSL 등을 적용해보고 있으며, 앞으로 Kafka, Elasticsearch, RAG 기반 AI 시스템까지 학습 범위를 확장할 계획입니다."
     }
   ],
   "skills": [
@@ -231,7 +231,8 @@
       ],
       "detail_title": "트러블슈팅 & 최적화",
       "detail_content": "<p style=\"margin-bottom:12px;\">레시피 공유 및 요리 커뮤니티 플랫폼의 백엔드를 직접 설계하고 개발하는 개인 프로젝트입니다.</p>\n        <hr style=\"border:none;border-top:1px solid var(--border);margin:16px 0;\">\n        <p style=\"margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;\">🔧 트러블슈팅</p>\n        <p style=\"margin-bottom:8px;\"><strong style=\"color:var(--text-primary);\">WebSocket 연결 끊김 해결:</strong> 실시간 채팅 구현 중 WebSocket이 주기적으로 끊어지는 문제를 발견했습니다. Heartbeat 설정 부재가 원인이었으며, SimpleBroker에 Heartbeat(10초/20초)와 TaskScheduler를 추가하여 해결했습니다.</p>\n        <p style=\"margin-bottom:8px;\"><strong style=\"color:var(--text-primary);\">JPA 성능 최적화:</strong> default_batch_fetch_size(100)로 N+1 문제를 해결하고, HikariCP 연결 풀 최적화, OSIV 비활성화로 전반적 성능을 2~3배 향상시켰습니다.</p>\n        <p><strong style=\"color:var(--text-primary);\">네트워크 최적화:</strong> Tailscale VPN에서 DERP 릴레이를 경유하던 문제를 포트 포워딩(UDP 41641, 3478)으로 직접 연결로 전환하여 지연 시간을 크게 줄였습니다.</p>",
-      "notion_url": "https://www.notion.so/2fc1edc8ee83812fb8a0f8e87d50614c"
+      "notion_url": "https://www.notion.so/2fc1edc8ee83812fb8a0f8e87d50614c",
+      "github_url": "https://github.com/chaosen0521/tablelog"
     },
     {
       "id": "extra",
