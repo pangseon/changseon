@@ -222,7 +222,7 @@
       "title": "Tablelog Backend — 레시피 공유 커뮤니티",
       "subtitle": "팀 프로젝트 (BE 리드 · 5인)",
       "period": "2025.02 ~ 진행 중",
-      "description": "레시피 공유 커뮤니티 백엔드 설계 · 실시간 채팅 개발 · 인프라 구축",
+      "description": "레시피 공유 커뮤니티 백엔드 개발 담당 · 실시간 채팅 구현 · 인프라 구축",
       "tags": [
         "Spring Boot 3.4",
         "Java 19",
