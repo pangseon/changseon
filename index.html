@@ -254,25 +254,6 @@
             color: #6e40c9;
         }
 
-        .notion-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 10px;
-            padding: 5px 12px;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            font-size: 12px;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .notion-link:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
         /* === VALUES === */
         .values-grid {
             display: grid;
@@ -880,10 +861,6 @@
                 <p>개발은 결국 문제를 해결하는 일이라고 생각합니다. 식약처 의료기기 검토 프로젝트에서 1,200건의 PDF를 수작업으로 검토하던 프로세스를 자동화하여 검토 시간을 80% 절감한 경험이 있습니다. 기술을 통해 실무의 비효율을 개선하는 과정에서 큰 보람을 느낍니다.</p>
             </div>
             <div class="value-card">
-                <h3>⚙️ 배치 설계와 성능 최적화</h3>
-                <p>하드웨어가 아닌 설계와 알고리즘으로 문제를 해결하는 것을 좋아합니다. 단건 INSERT에서 COPY + 벌크 INSERT + 5,000건 청크 분할로 전환해 일일 약 192만 건 처리 시간을 92% 단축했고, 14개 배치의 의존 관계를 플로우차트로 시각화하며 실행 순서를 설계했습니다. 제한된 자원 안에서 구조 자체를 개선하는 과정에 관심이 많습니다.</p>
-            </div>
-            <div class="value-card">
                 <h3>📚 끊임없는 학습</h3>
                 <p>업무 외 시간에도 사이드 프로젝트를 통해 새로운 기술을 실습합니다. 현재 Tablelog 프로젝트에서 WebSocket, QueryDSL 등을 적용해보고 있으며, 앞으로 Kafka, Elasticsearch, RAG 기반 AI 시스템까지 학습 범위를 확장할 계획입니다.</p>
             </div>
@@ -913,6 +890,7 @@
                 <div class="skill-tags">
                     <span class="skill-tag">Spring Boot</span>
                     <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Django</span>
                     <span class="skill-tag">PHP</span>
                 </div>
             </div>
@@ -944,6 +922,7 @@
                 <div class="skill-group-title">Frontend</div>
                 <div class="skill-tags">
                     <span class="skill-tag">React</span>
+                    <span class="skill-tag">Flutter</span>
                     <span class="skill-tag">Svelte</span>
                 </div>
             </div>
@@ -964,13 +943,32 @@
         <div class="career-item">
             <div class="career-header">
                 <div>
-                    <div class="career-company">(주)스페이스아르</div>
-                    <div class="career-desc">KT 챗봇 개발 및 MVNO CRM 프로젝트 백엔드 개발</div>
+                    <div class="career-company">(주)보이노시스</div>
+                    <div class="career-desc">Brain Guard Doctor — 치매 진단 SaMD 서비스 SW 분석·개선 및 식약처 보안성 검토</div>
                 </div>
                 <div style="text-align: right;">
                     <span class="career-current">재직중</span>
-                    <div class="career-period">2025.05 ~ 현재</div>
-                    
+                    <div class="career-period">2026.04 ~ 현재</div>
+                </div>
+            </div>
+            <div class="career-keywords">
+                <span class="keyword keyword-blue">Flutter</span>
+                <span class="keyword keyword-blue">Django</span>
+                <span class="keyword keyword-orange">React</span>
+                <span class="keyword keyword-purple">SaMD</span>
+                <span class="keyword keyword-purple">Python</span>
+            </div>
+        </div>
+
+        <div class="career-item">
+            <div class="career-header">
+                <div>
+                    <div class="career-company">(주)스페이스아르</div>
+                    <div class="career-desc">Rasa 기반 정보 조회 챗봇 개발 및 MVNO CRM 프로젝트 개발</div>
+                </div>
+                <div style="text-align: right;">
+                    <div class="career-period">2025.05 ~ 2026.04</div>
+                    <div style="font-size:12px; color:var(--text-muted);">11개월</div>
                 </div>
             </div>
             <div class="career-keywords">
@@ -1016,10 +1014,28 @@
 
         <div class="project-sub-header">🏢 실무 프로젝트</div>
 
+        <div class="project-item" data-detail="brain-guard-doctor">
+            <div class="project-header">
+                <div class="project-title">Brain Guard Doctor</div>
+                <div class="career-period">2026.04 ~ 현재</div>
+            </div>
+            <div class="project-sub">(주)보이노시스</div>
+            <ul class="project-list">
+                <li>치매 진단 SaMD — Flutter(Windows) 진단 기기·React 관리자 웹·Django 서버 분석·개선 및 식약처 보안성 검토</li>
+            </ul>
+            <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Django</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">SaMD</span>
+            </div>
+        </div>
+
         <div class="project-item" data-detail="kt-chatbot">
             <div class="project-header">
-                <div class="project-title">KT 챗봇 개발</div>
-                <div class="career-period">2025.05 ~ 현재</div>
+                <div class="project-title">Rasa 기반 정보 조회 챗봇 개발</div>
+                <div class="career-period">2025.05 ~ 2026.04</div>
             </div>
             <div class="project-sub">(주)스페이스아르</div>
             <ul class="project-list">
@@ -1031,13 +1047,12 @@
                 <span class="project-tag">Redis</span>
                 <span class="project-tag">Python</span>
             </div>
-            <a class="notion-link" href="https://www.notion.so/2f81edc8ee838167966ac4b249ab1ba9" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="mvno-crm">
             <div class="project-header">
                 <div class="project-title">MVNO CRM 프로젝트</div>
-                <div class="career-period">2025.11 ~ 현재</div>
+                <div class="career-period">2025.11 ~ 2026.04</div>
             </div>
             <div class="project-sub">(주)스페이스아르</div>
             <ul class="project-list">
@@ -1051,7 +1066,6 @@
                 <span class="project-tag">Azure</span>
                 <span class="project-tag">SFTP</span>
             </div>
-            <a class="notion-link" href="https://www.notion.so/2f81edc8ee8381bc8595de6fbcd25dd9" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="tta">
@@ -1068,7 +1082,6 @@
                 <span class="project-tag">MySQL</span>
                 <span class="project-tag">Java</span>
             </div>
-            <a class="notion-link" href="https://www.notion.so/2f81edc8ee838161b613c5d709ca17d8" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="mfds">
@@ -1086,7 +1099,6 @@
                 <span class="project-tag">PyPDF2</span>
                 <span class="project-tag">NLP</span>
             </div>
-            <a class="notion-link" href="https://www.notion.so/2f81edc8ee8381d0831ac6187cd0c048" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="youth">
@@ -1102,7 +1114,6 @@
                 <span class="project-tag">PHP</span>
                 <span class="project-tag">MySQL</span>
             </div>
-            <a class="notion-link" href="https://www.notion.so/2f81edc8ee83818ab994e514f7fa6f34" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="tablelog">
@@ -1129,7 +1140,6 @@
                 <span class="project-tag">Nginx</span>
             </div>
             <a class="github-link" href="https://github.com/chaosen0521/tablelog" target="_blank" rel="noopener">🔗 GitHub</a>
-            <a class="notion-link" href="https://www.notion.so/2fc1edc8ee83812fb8a0f8e87d50614c" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="extra">
@@ -1151,7 +1161,6 @@
                 <span class="project-tag">Docker</span>
             </div>
             <a class="github-link" href="https://github.com/pangseon" target="_blank" rel="noopener">🔗 GitHub</a>
-            <a class="notion-link" href="https://www.notion.so/3161edc8ee83812e8a9ccd18b811d627" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="lighthouse">
@@ -1172,7 +1181,6 @@
                 <span class="project-tag">React</span>
             </div>
             <a class="github-link" href="https://github.com/pangseon" target="_blank" rel="noopener">🔗 GitHub</a>
-            <a class="notion-link" href="https://www.notion.so/bff3b22a33714236bc28eb621ea0154c" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
 
         <div class="project-item" data-detail="click-recipe">
@@ -1194,7 +1202,6 @@
                 <span class="project-tag">GitHub Actions</span>
             </div>
             <a class="github-link" href="https://github.com/pangseon" target="_blank" rel="noopener">🔗 GitHub</a>
-            <a class="notion-link" href="https://www.notion.so/3cc90dc8f8ef46a4aa8e571af94ae83b" target="_blank" rel="noopener">📎 Notion 상세 보기</a>
         </div>
     </section>
 <!-- PROJECTS_END -->
@@ -1280,11 +1287,17 @@ window.addEventListener('scroll', () => {
 // Project Modal — Extra Detail Data
 // PROJECTDETAILS_START
     const projectDetails = {
+    'brain-guard-doctor': {
+        title: '배경 & 과정',
+        content: `<p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">BGD(Brain Guard Doctor)</strong>는 치매 환자 진단을 목적으로 개발된 의료기기 소프트웨어(SaMD) 서비스입니다. <strong style="color:var(--text-primary);">Flutter(Windows)</strong> 진단 클라이언트, <strong style="color:var(--text-primary);">React</strong> 관리자 웹, <strong style="color:var(--text-primary);">Django</strong> 서버로 구성되며, AI 모델 서버는 <strong style="color:var(--text-primary);">AI 개발팀에서 별도 운영</strong>합니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">관리자 웹(React):</strong> 활성 기기 관리, 계정 생성, 검사를 위한 환자 정보 직접 입력, 치매 진단 결과 확인 기능을 제공합니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">서비스 흐름:</strong> Windows 환경의 진단 기기에서 환자가 시선 추적·PDT·BPT 검사를 진행합니다. 기기 내장 모델이 영상·음성 데이터에서 피처를 추출해 서버로 전송하고, AI 모델 서버(AI 개발팀)가 score를 산출한 뒤 전체 결과를 종합해 치매 여부를 판정합니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">담당 업무:</strong> AI 모델 개발을 제외한 서비스 SW 영역을 담당합니다. 인수인계 문서가 없는 상태에서 로컬 환경에 서비스를 직접 기동·분석하며 문서화를 진행했고, 분석 결과를 바탕으로 개선 항목을 도출하며 식약처 보안성 검토 요건에 맞춰 수정 작업을 수행하고 있습니다.</p>`
+    },
     'kt-chatbot': {
         title: '배경 & 과정',
-        content: `<p style="margin-bottom:12px;">KT의 KOS 프로그램과 연동하여 요금제 조회, 비교, 추천 기능을 대화형 챗봇으로 제공하는 시스템을 개발했습니다.</p>
-        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">핵심 과제:</strong> API 통신 구조 설계 시 데이터 동기화와 실시간 처리를 모두 지원해야 했으며, Redis를 활용하여 세션 관리와 캐싱을 통해 응답 속도를 최적화했습니다.</p>
-        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">성과:</strong> 현재 월 100명 이상의 사용자가 이용 중이며, 고객 문의 등록부터 담당자 배정, 처리 현황 추적까지 전체 워크플로우를 자동화했습니다.</p>
+        content: `<p style="margin-bottom:12px;">KT의 KOS 프로그램과 연동하여 요금제 조회 기능 연동 정보를 활용한 문의등록 기능을 챗봇으로 제공하는 시스템을 개발했습니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">핵심 과제:</strong> Rasa 오픈소스를 활용한 챗봇 개발과 RedisTrackerStore 기반 대화 관리에 중점을 두었습니다. 사용자 세션과 대화 이력을 Redis에 저장하여 멀티턴 대화를 안정적으로 지원했습니다.</p>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">🔧 트러블슈팅</p>
         <p><strong style="color:var(--text-primary);">Redis Cluster 환경에서 Rasa TrackerStore 호환 문제:</strong> 내부망 환경에서 Docker 이미지를 반입하여 운영하고 있었는데, 사용 가능한 Redis가 클러스터 구조였습니다. Rasa가 기본 제공하는 RedisTrackerStore는 단일 노드 Redis만 지원하여 연결 오류가 발생했습니다. 이에 Rasa 라이브러리의 RedisTrackerStore 소스 코드를 직접 분석했으며, 따라서 Redis Cluster에 대응하는 커스텀 TrackerStore를 구현해 해결했습니다.</p>`
@@ -1292,11 +1305,11 @@ window.addEventListener('scroll', () => {
     'mvno-crm': {
         title: '배경 & 과정',
         content: `<p style="margin-bottom:12px;">MVNO(알뜰폰) 사업자를 위한 CRM 시스템의 배치 프로그램과 TM 캠페인 관리 기능을 개발했습니다. 기동 환경은 <strong style="color:var(--text-primary);">Azure의 Pod 환경</strong>이며, 배치 스케줄링은 <strong style="color:var(--text-primary);">Apache Airflow</strong>로 관리했습니다.</p>
-        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">배치 시스템:</strong> Airflow DAG으로 14개의 배치 워크플로우를 설계하고, 매일 SFTP를 통해 외부 파일을 수집한 뒤 파싱·검증 후 PostgreSQL에 자동 적재했습니다. 에러 핸들링과 실행 로그 관리를 통해 안정적인 운영을 보장했습니다.</p>
+        <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">배치 시스템:</strong> SFTP로 파일을 수집하고, Airflow DAG 기반 14개 배치 워크플로우를 통해 PostgreSQL에 자동 적재하는 시스템을 개발했습니다.</p>
         <p style="margin-bottom:12px;"><strong style="color:var(--text-primary);">TM 캠페인:</strong> 캠페인 조회, 대상자 필터링/관리, 반응 등록 및 통계 조회 등 TM 운영 전 과정을 시스템화했습니다.</p>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0;">
         <p style="margin-bottom:8px;font-size:13px;color:var(--accent);font-weight:600;">🔧 트러블슈팅</p>
-        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">프로젝트 설계의 어려움:</strong> 배치 프로그램 14개의 실행 순서·의존관계·예외 처리를 어떻게 구조화할지 기존 레퍼런스가 없었습니다. 이에 각 배치의 입력/출력 데이터를 먼저 정리하고, 의존 관계를 플로우 차트로 시각화한 뒤 실행 순서를 확정하는 방식으로 전체 설계를 완성했습니다.</p>
+        <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">프로젝트 설계의 어려움:</strong> 처음 활용해 본 프레임워크였고, 요구사항에 맞게 구조화하는 과정이 어려웠습니다. 이에 각 배치의 입력/출력 데이터를 먼저 정리하고 플로우 차트를 작성한 뒤, 리뷰를 통해 수정해 나가며 개발을 진행했습니다.</p>
         <p style="margin-bottom:8px;"><strong style="color:var(--text-primary);">대량 데이터 적재 시 타임아웃:</strong> 일일 약 192만 건 데이터를 INSERT하는 과정에서 트랜잭션 타임아웃이 발생했습니다. 따라서 단건 INSERT를 COPY 명령과 벌크 INSERT로 변경하고, 청크 단위(5,000건)로 분할 처리하여 30분 이내에 완료되도록 개선했습니다.</p>`
     },
     'tta': {
