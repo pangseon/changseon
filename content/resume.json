@@ -8,7 +8,7 @@
   },
   "summary": [
     {
-      "text": "사용자가 쓰기 편한 서비스를 만드는 것을 목표로 하는 백엔드 개발자입니다.",
+      "text": "사용자가 쓰기 편한 서비스를 만드는 것을 목표로 합니다.",
       "highlight": "사용자가 쓰기 편한 서비스를 만드는 것"
     },
     {
@@ -141,7 +141,7 @@
     {
       "id": "kt-chatbot",
       "title": "KT 챗봇 개발",
-      "subtitle": "(주)스페이스아르 · 챗봇 개발자",
+      "subtitle": "(주)스페이스아르",
       "period": "2025.05 ~ 현재",
       "description": "KT의 KOS(KT Operating System) 프로그램과 챗봇 시스템 연동, API 통신 구조 설계 및 구현",
       "tags": [
@@ -157,7 +157,7 @@
     {
       "id": "mvno-crm",
       "title": "MVNO CRM 프로젝트",
-      "subtitle": "(주)스페이스아르 · 백엔드 개발자",
+      "subtitle": "(주)스페이스아르",
       "period": "2025.11 ~ 현재",
       "description": "Airflow 기반 14개 배치 DAG 설계 및 개발 — SFTP 파일 수집, 파싱/검증 후 PostgreSQL 자동 적재 (Azure Pod 환경)",
       "tags": [
@@ -175,7 +175,7 @@
     {
       "id": "tta",
       "title": "TTA 홈페이지 구축",
-      "subtitle": "(주)퓨처플랫폼 · 백엔드 개발자",
+      "subtitle": "(주)퓨처플랫폼",
       "period": "2024.08 ~ 2024.12",
       "description": "표준화 위원회 및 국제표준화전문가 2개 도메인에 대한 요구사항 분석 및 DB 스키마 설계",
       "tags": [
@@ -206,7 +206,7 @@
     {
       "id": "youth",
       "title": "서울시 청소년시설 회원관리 시스템 유지보수",
-      "subtitle": "(주)퓨처플랫폼 · 백엔드 개발자 (유지보수)",
+      "subtitle": "(주)퓨처플랫폼 (유지보수)",
       "period": "2024.08 ~ 2025.04",
       "description": "서울시 전체 청소년 센터 대상 회원관리 시스템 안정화 및 버그 수정",
       "tags": [
